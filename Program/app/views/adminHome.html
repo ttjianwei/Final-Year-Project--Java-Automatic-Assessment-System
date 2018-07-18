@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Web Assessment Portal</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../public/css/styleBS.css" rel="stylesheet">
+</head>
+
+<body ng-app="myApp" ng-controller="adminhomeController">
+
+
+
+<!--Include header-->
+<!--deprecated
+<div ng-include src="'views/templates/header.html'"></div>
+-->
+
+<header-component></header-component>
+
+
+	 <div class="page-content">
+
+		<div class="row">
+
+	<!-- Insert Side bar-->
+		  
+		  <sidebar-component></sidebar-component>
+
+		<div class="col-md-10"><!--Main content -->
+			<div class="row">
+			<!-- to display content here -->
+			</div>
+		</div>
+
+
+
+	 </div>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../public/javascript/myApp.js"></script>
+<script src="../controllers/adminhomeController.js"></script>
+<script src="../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../public/javascript/custom.js"></script>
+<script src="public/javascript/ng-file-upload-shim.min.js"></script> 
+<script src="public/javascript/ng-file-upload.min.js"></script>
+</body>
+</html>
+
+

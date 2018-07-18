@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Web Assessment Portal</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../../public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../public/css/styleBS.css" rel="stylesheet">
+<link href="../../public/css/bootstrap-formhelpers.min.css" rel="stylesheet">
+<link href="../../public/css/bootstrap-select.min.css" rel="stylesheet">
+<link href="../../public/css/bootstrap-tags.css" rel="stylesheet">
+<link href="../../public/css/forms.css" rel="stylesheet">
+
+<style>
+.hidden {
+  visibility: hidden;
+}
+
+#box {
+  width : 800px;
+  height: 400px;
+  border: #000 1px solid;
+  padding: 10px;
+  font-family : monospace;
+  cursor : text;
+  word-wrap: break-word;
+}
+.hidden {
+  visibility: hidden;
+}
+
+
+</style>
+</head>
+
+
+<body ng-app="myApp" ng-controller="adminhomeController">
+
+<header-component></header-component>
+	 <div class="page-content">
+
+		<div class="row">
+
+<div class="col-lg-12 col-sm-12 col-xs-12 alert alert-danger" ng-show="failureMessagebool ">
+        <strong>{{failureMessage }}</strong>
+</div>
+
+<div class="col-lg-12 col-sm-12 col-xs-12 alert alert-success" ng-show="successMessagebool ">
+        <strong>{{successMessage }}</strong>
+</div>
+
+
+
+ <div class="col-md-2"><!--grid 2 for bootstrap -->
+		  	<div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <!-- Main menu -->
+                    <li class="Dashboard.html"><a href="" ng-click="viewStudentResults()"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
+                   <br>             	
+					 <li class="submenu">
+                         <a href="">
+                            <i class="glyphicon glyphicon-list"></i> Manage Annoucements
+                            <span class="caret pull-right"></span>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                            <li><a href="" ng-click="createAnnoucement()">Create Annoucements</a></li>
+                            <li><a href="" ng-click="deleteAnnoucement()">Delete Annoucements</a></li>
+                            <li><a href="" ng-click="modifyAnnoucement()">Modify Annoucements</a></li>
+                        </ul>
+                    </li>
+                    <br>
+					 <li class="submenu">
+                         <a href="">
+                            <i class="glyphicon glyphicon-list"></i> Manage Sessions
+                            <span class="caret pull-right"></span>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                            <li><a href="" ng-click="createSession()">Create Quiz Sessions</a></li>
+                            <li><a href="" ng-click="deleteSession()">Delete Quiz Sessions</a></li>
+                            <li><a href="" ng-click="modifySession()">Modify Quiz Sessions</a></li>
+                        </ul>
+                    </li>
+                    <br>
+                     <li class="submenu">
+                         <a href="">
+                            <i class="glyphicon glyphicon-list"></i> Manage Labs
+                            <span class="caret pull-right"></span>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                            <li><a href="" ng-click="createLabs()">Create Labs</a></li>
+                            <li><a href="" ng-click="deleteLabs()">Delete Labs</a></li>
+                            <li><a href="" ng-click="modifyLabs()">Modify Labs</a></li>
+                        </ul>
+                    </li>
+                    <br>
+					 <li class="submenu">
+                         <a href="">
+                            <i class="glyphicon glyphicon-list"></i> Manage Assessment Questions
+                            <span class="caret pull-right"></span>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                            <li><a class="current" href="" ng-click="addQuestions()">Add Assessment Questions</a></li>
+                            <li><a href="" ng-click="deleteQuestions()">Delete Assessment Questions</a></li>
+                            <li><a href="" ng-click="modifyQuestions()">Modify Assessment Questions</a></li>
+                        </ul>
+                    </li>
+			             <br>
+
+                    <li class="submenu">
+                         <a href="">
+                            <i class="glyphicon glyphicon-list"></i> Manage Student Records
+                            <span class="caret pull-right"></span>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                            <li><a href="" ng-click="addStudent()">Add Students Record</a></li>
+                            <li><a href="" ng-click="deleteStudent()">Delete Students Record</a></li>
+                            <li><a class="current" href="" ng-click="modifyStudent()">Modify Students Record</a></li>
+                        </ul>
+                    </li>
+                </ul>
+             </div>
+		  </div>
+
+
+			<div class="col-md-8"><!--Main content -->
+			<div class="row">
+			<div class="col-md-5">
+	  					<div class="content-box-large">
+			  				<div class="panel-heading">
+					            <div class="panel-title"><h3><b>Delete Lab<b></b></h3></div>
+					          
+					          
+					        </div>
+			  				<div class="panel-body">
+			  					<form name="DeleteLabForm" id="DeleteLabForm">
+							
+										<div class="form-group">
+									
+								
+ 						
+
+											<label>Choose Lab to delete</label>
+										 
+                        <div data-ng-init="getLabs()">
+                       <select class="form-control" name="labDeletion" ng-model="labDeletion" style="width:400px"> <option ng-repeat="lab in labs">{{lab.LabName}}</option></select>
+                       </div>
+
+										
+										</div>
+									
+ 							
+ 							 
+								
+
+									<div>
+											<button class="btn btn-lg btn-primary" type="submit" ng-click="deleteLabInServer()">Delete</button>
+										
+									</div>
+
+
+
+								
+					          
+								</form>
+			  				</div>
+			  			</div>
+			  			  
+	  				</div>
+
+
+
+
+						</div>
+					
+							<div class="row">
+										<div class="content-box-large" data-ng-init="getLabs()">
+
+				<div class="panel-heading">
+					<div class="panel-title"><b>Labs</b></div>
+
+						<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+						<thead>
+							<tr>
+								<th>Lab No.</th>
+								<th>Lab Name</th>
+								<th>Lab File</th>
+							
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="lab in labs">
+          						<td> {{lab.LabNo}} </td>
+          						<td> {{lab.LabName}} </td>
+          						<td> {{lab.LabFile}} </td>
+          						
+     			
+       						</tr>
+	
+						</tbody>
+					</table>
+				</div>
+				</div>
+							</div>
+
+			</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<!-- Forms Scripts -->
+<script src="../../public/javascript/bootstrap-formhelpers.min.js"></script>
+<script src="../../public/javascript/bootstrap-select.min.js"></script>
+<script src="../../public/javascript/bootstrap-tags.min.js"></script>
+<script src="../../public/javascript/jquery.maskedinput.min.js"></script>
+<script src="../../public/javascript/moment.min.js"></script>
+<script src="../../public/javascript/jquery.bootstrap.wizard.min.js"></script>
+
+<!-- AngularJS Scripts -->
+<script src="../../public/javascript/myApp.js"></script>
+<script src="../../controllers/adminhomeController.js"></script>
+
+<!--data table scripts -->
+<link href="../../public/css/dataTables.bootstrap.css" rel="stylesheet" media="screen">
+<script src="../../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../public/javascript/jquery.dataTables.min.js"></script>
+<script src="../../public/javascript/dataTables.bootstrap.js"></script>
+<script src="../../public/javascript/tables.js"></script>
+
+<!-- file upload scripts-->
+<script src="../../public/javascript/ng-file-upload-shim.min.js"></script> 
+<script src="../../public/javascript/ng-file-upload.min.js"></script>
+
+
+<!-- common scripts -->
+<script src="../../public/javascript/custom.js"></script>
+
+
+
+</body>
+
+</html>
+

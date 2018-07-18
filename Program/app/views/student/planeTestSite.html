@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Web Assessment Portal</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../../public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../public/css/styleBS.css" rel="stylesheet">
+<link href="../../public/css/bootstrap-formhelpers.min.css" rel="stylesheet">
+<link href="../../public/css/bootstrap-select.min.css" rel="stylesheet">
+<link href="../../public/css/bootstrap-tags.css" rel="stylesheet">
+<link href="../../public/css/forms.css" rel="stylesheet">
+<script src="../../public/javascript/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../public/javascript/src-noconflict/mode-java.js" type="text/javascript" charset="utf-8"></script>
+<style type="text/css" media="screen">
+    #planeAppEditor { 
+      
+         width: 100%;
+        height: 100%;
+    }
+    #planeSeatEditor{ 
+      
+         width: 100%;
+        height: 100%;
+    }
+  #planeEditor { 
+      
+         width: 100%;
+        height: 100%;
+    }
+     
+    #editorContainer {
+    width: 800px;
+    height: 400px;
+    position: relative;
+ }
+</style>
+
+
+</head>
+
+<body ng-app="myApp" ng-controller="studenthomeController">
+
+
+
+<head-component></head-component>
+
+
+ <div class="page-content">
+
+ <div class="row">
+
+  <div class="col-md-2"><!--grid 2 for bootstrap -->
+        <div class="sidebar content-box" style="display: block;">
+           <ul class="nav">
+                    <!-- Main menu -->
+           <li><a href="" ng-click="studentHome()"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
+           <br>
+           <li class="current"><a href="" ng-click="attemptAssessmentQuestion()"><i class="glyphicon glyphicon-pencil"></i> Attempt Assessment Questions</a></li>
+           <br>
+           <li class=""><a href="" ng-click="attemptLabs()"><i class="glyphicon glyphicon-book"></i> Labs</a></li>
+           <br>
+           <li><a href=""><i class="glyphicon glyphicon-time"></i> View Past Attempts</a></li>
+           <br>
+           <li><a href=""><i class="glyphicon glyphicon-file"></i> View Reports</a></li>
+              <br>
+                
+                </ul>
+             </div>
+      </div>
+
+    <div class="col-md-8"><!--Title content -->
+    <div class="row">
+      <!-- to display content here -->
+
+  <div class="content-box-large">
+  <div class="container">
+      
+      <br>
+        <h2>Plane App Test<h2>
+       
+       </div>
+     </div>
+
+      </div>
+
+    
+      <div class="row">
+      <!-- to display content here -->
+
+  <div class="content-box-large" style="height:2250px"> 
+  <div class="container">
+      
+
+
+
+      <br>
+        <b><h3>
+       Plane Application</h3>
+      </b>
+   <div style="font-size:14px;white-space:pre-wrap;width:800px;">
+   
+  
+     </div>
+<br>
+<h3>
+PlaneApp.java</h3>
+<div id="editorContainer">
+<div id="planeAppEditor"></div>
+<br>
+
+  <b>Output:</b>
+  <textarea class="form-control" rows="4" name="planeAppOutput" id="planeAppOutput" ng-model="planeAppOutput" style="width:800px;" disabled></textarea>
+  <br>
+  <button id="planeAppclassBtn" class="btn btn-success btn-lg" type="submit" ng-click="compilePlaneApp()" style="float:right;">Save and Compile</button>
+
+<br>
+<h3>
+PlaneSeat.java</h3>
+<div id="editorContainer">
+<div id="planeSeatEditor"></div>
+<br>
+
+  <b>Output:</b>
+  <textarea class="form-control" rows="4" name="planeSeatOutput" id="planeSeatOutput" ng-model="planeSeatOutput" style="width:800px;" disabled></textarea>
+  <br>
+  <button id="planeSeatclassBtn" class="btn btn-success btn-lg" type="submit" ng-click="compilePlaneSeat()" style="float:right;">Save and Compile</button>
+
+<br>
+
+<h3>
+Plane.java</h3>
+<div id="editorContainer">
+<div id="planeEditor"></div>
+<br>
+
+  <b>Output:</b>
+  <textarea class="form-control" rows="4" name="planeOutput" id="planeOutput" ng-model="planeOutput" style="width:800px;" disabled></textarea><br>
+  <button id="planeclassBtn" class="btn btn-success btn-lg" type="submit" ng-click="compilePlane()" style="float:right;">Save and Compile</button>
+<br>
+
+<br>
+<br>
+
+<br>
+<center>
+
+ <button id="saveAndSubmit" class="btn btn-success btn-lg" type="submit" ng-click="submitPlane()">Save and Submit all solution</button>
+</center>
+       </div>
+     </div>
+
+      </div>
+
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+   
+    var planeAppEditor = ace.edit("planeAppEditor");
+    var planeSeatEditor = ace.edit("planeSeatEditor");
+    var planeEditor = ace.edit("planeEditor");
+
+    //editor.setTheme("ace/theme/monokai");
+
+    planeAppEditor.setTheme("ace/theme/dawn");
+    planeAppEditor.getSession().setMode("ace/mode/java");
+    planeAppEditor.getSession().setOption("useWorker", true);
+    planeSeatEditor.setTheme("ace/theme/dawn");
+    planeSeatEditor.getSession().setMode("ace/mode/java");
+    planeSeatEditor.getSession().setOption("useWorker", true);
+    planeEditor.setTheme("ace/theme/dawn");
+    planeEditor.getSession().setMode("ace/mode/java");
+    planeEditor.getSession().setOption("useWorker", true);
+
+
+</script>
+
+<!-- Forms Scripts -->
+<script src="../../public/javascript/bootstrap-formhelpers.min.js"></script>
+<script src="../../public/javascript/bootstrap-select.min.js"></script>
+<script src="../../public/javascript/bootstrap-tags.min.js"></script>
+<script src="../../public/javascript/jquery.maskedinput.min.js"></script>
+<script src="../../public/javascript/moment.min.js"></script>
+<script src="../../public/javascript/jquery.bootstrap.wizard.min.js"></script>
+
+<!-- AngularJS Scripts -->
+<script src="../../public/javascript/myApp.js"></script>
+<script src="../../controllers/studenthomeController.js"></script>
+
+<!--data table scripts -->
+<link href="../../public/css/dataTables.bootstrap.css" rel="stylesheet" media="screen">
+<script src="../../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../public/javascript/jquery.dataTables.min.js"></script>
+<script src="../../public/javascript/dataTables.bootstrap.js"></script>
+<script src="../../public/javascript/tables.js"></script>
+
+<!-- file upload scripts-->
+<script src="../../public/javascript/ng-file-upload-shim.min.js"></script> 
+<script src="../../public/javascript/ng-file-upload.min.js"></script>
+
+
+<!-- common scripts -->
+<script src="../../public/javascript/custom.js"></script>
+
+
+
+
+
+
+</body>
+
+
+
+
+</html>

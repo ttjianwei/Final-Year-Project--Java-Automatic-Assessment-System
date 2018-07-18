@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Web Assessment Portal</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../../public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../public/css/styleBS.css" rel="stylesheet">
+<link href="../../public/css/bootstrap-formhelpers.min.css" rel="stylesheet">
+<link href="../../public/css/bootstrap-select.min.css" rel="stylesheet">
+<link href="../../public/css/bootstrap-tags.css" rel="stylesheet">
+<link href="../../public/css/forms.css" rel="stylesheet">
+<script src="../../public/javascript/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../public/javascript/src-noconflict/mode-java.js" type="text/javascript" charset="utf-8"></script>
+<style type="text/css" media="screen">
+    #editor1 { 
+      
+         width: 100%;
+        height: 100%;
+    }
+    #editor2 { 
+      
+         width: 100%;
+        height: 100%;
+    }
+  #editor3 { 
+      
+         width: 100%;
+        height: 100%;
+    }
+      #editor4 { 
+      
+         width: 100%;
+        height: 100%;
+    }
+       #editor4sub1 { 
+      
+         width: 100%;
+        height: 100%;
+    }
+         #editor4sub2 { 
+      
+         width: 100%;
+        height: 100%;
+    }
+      #editor4sub3 { 
+      
+         width: 100%;
+        height: 100%;
+    }
+          #editor4app { 
+      
+         width: 100%;
+        height: 100%;
+    }
+    #editorContainer {
+    width: 800px;
+    height: 400px;
+    position: relative;
+ }
+</style>
+
+
+</head>
+
+<body ng-app="myApp" ng-controller="studenthomeController">
+
+
+
+<head-component></head-component>
+
+
+ <div class="page-content">
+
+ <div class="row">
+
+  <div class="col-md-2"><!--grid 2 for bootstrap -->
+        <div class="sidebar content-box" style="display: block;">
+           <ul class="nav">
+                    <!-- Main menu -->
+           <li><a href="" ng-click="studentHome()"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
+           <br>
+           <li class="current"><a href="" ng-click="attemptAssessmentQuestion()"><i class="glyphicon glyphicon-pencil"></i> Attempt Assessment Questions</a></li>
+           <br>
+           <li class=""><a href="" ng-click="attemptLabs()"><i class="glyphicon glyphicon-book"></i> Labs</a></li>
+           <br>
+            <li><a href="" ng-click="viewAttempts()"><i class="glyphicon glyphicon-time"></i> View Past Attempts</a></li>
+              <br>
+                
+                </ul>
+             </div>
+      </div>
+
+    <div class="col-md-8"><!--Title content -->
+      <div class="row">
+      <!-- to display content here -->
+
+  <div class="content-box-large">
+  <div class="container">
+      
+      <br>
+        <h2>{{sessionTitle}}<h2>
+       
+       </div>
+     </div>
+
+      </div>
+
+
+
+
+      <div class="row">
+      <!-- to display content here -->
+
+  <div class="content-box-large" data-ng-init="getQ1()"> 
+  <div class="container">
+      
+      <br>
+
+      <h3>Question 1.</h3>
+
+      <br>
+       <b>
+
+       <h3>
+       {{Q1Title}}</h3>
+</b>
+       <br>
+       <div style="font-size:14px;width:800px;">
+       {{Q1Description}}
+     </div>
+<br>
+<div id="editorContainer">
+<div id="editor1"></div>
+<br>
+
+  <b>Output:</b>
+  <textarea class="form-control" rows="4" name="Q1Output" id="Q1Output" ng-model="Q1Output" style="width:800px;" disabled></textarea>
+  <br>
+  <button id="runQ1Btn" class="btn btn-success btn-lg" type="submit" ng-click="compileQ1()" style="float:right;">Save and Compile</button>
+
+</div>
+     </div>
+     </div>
+      </div>
+    
+          <div class="row">
+      <!-- to display content here -->
+
+  <div class="content-box-large" data-ng-init="getQ2()"> 
+  <div class="container">
+      
+      <br>
+      <h3>Question 2.</h3>
+
+
+      <br>
+      <b><h3>
+       {{Q2Title}}</h3>
+      </b>
+       <br>
+        <div style="font-size:14px;width:800px;">
+       {{Q2Description}}
+     </div>
+<br>
+<div id="editorContainer">
+<div id="editor2"></div>
+<br>
+
+  <b>Output:</b>
+  <textarea class="form-control" rows="4" name="Q2Output" id="Q2Output" ng-model="Q2Output" style="width:800px;" disabled></textarea>
+  <br>
+  <button id="runQ2Btn" class="btn btn-success btn-lg" type="submit" ng-click="compileQ2()" style="float:right;">Save and Compile</button>
+
+       </div>
+     </div>
+
+      </div>
+
+      
+    
+      <div class="row">
+      <!-- to display content here -->
+
+  <div class="content-box-large" data-ng-init="getQ3()"> 
+  <div class="container">
+      
+      <br>
+      <h3>Question 3.</h3>
+
+
+      <br>
+           <b><h3>
+       {{Q3Title}}</h3>
+      </b>
+         <br>
+         <div style="font-size:14px;width:800px;">
+       {{Q3Description}}
+     </div>
+
+     <br>
+<div id="editorContainer">
+<div id="editor3"></div>
+<br>
+
+  <b>Output:</b>
+  <textarea class="form-control" rows="4" name="Q3Output" id="Q3Output" ng-model="Q3Output" style="width:800px;" disabled></textarea>
+  <br>
+  <button id="runQ3Btn" class="btn btn-success btn-lg" type="submit" ng-click="compileQ3()" style="float:right;">Save and Compile</button>
+
+
+
+
+       </div>
+     </div>
+
+      </div>
+    </div>
+    
+         
+    
+      <div class="row">
+      <!-- to display content here -->
+
+  <div class="content-box-large" data-ng-init="getQ4()"> 
+  <div class="container">
+      
+      <br>
+      <h3>Question 4.</h3>
+
+
+      <br>
+           <b><h3>
+       {{Q4Title}}</h3>
+      </b>
+         <br>
+         <div style="font-size:14px;width:800px;">
+       {{Q4Description}}
+     </div>
+
+     <br>
+<div id="editorContainer">
+<div id="editor4"></div>
+<br>
+
+  <b>Output:</b>
+  <textarea class="form-control" rows="4" name="Q4Output" id="Q4Output" ng-model="Q4Output" style="width:800px;" disabled></textarea>
+  <br>
+  <button id="runQ4Btn" class="btn btn-success btn-lg" type="submit" ng-click="compileQ4()" style="float:right;">Save and Compile</button>
+
+
+       </div>
+     </div>
+     <br>
+     <br>
+     <br>
+     <br>
+ <center>
+       <button id="saveAndSubmit" class="btn btn-success btn-lg" type="submit" ng-click="submitSolution()">Save and Submit all solution</button>
+       </center>
+
+      </div>
+     
+    </div>
+    
+   
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    var editor = ace.edit("editor1");
+    var editor2 = ace.edit("editor2");
+    var editor3 = ace.edit("editor3");
+    var editor4 = ace.edit("editor4");
+    editor.setTheme("ace/theme/dawn");
+    editor.getSession().setMode("ace/mode/java");
+    editor.getSession().setOption("useWorker", true);
+    editor2.setTheme("ace/theme/dawn");
+    editor2.getSession().setMode("ace/mode/java");
+    editor2.getSession().setOption("useWorker", true);
+    editor3.setTheme("ace/theme/dawn");
+    editor3.getSession().setMode("ace/mode/java");
+    editor3.getSession().setOption("useWorker", true);
+    editor4.setTheme("ace/theme/dawn");
+    editor4.getSession().setMode("ace/mode/java");
+    editor4.getSession().setOption("useWorker", true);
+
+</script>
+
+<!-- Forms Scripts -->
+<script src="../../public/javascript/bootstrap-formhelpers.min.js"></script>
+<script src="../../public/javascript/bootstrap-select.min.js"></script>
+<script src="../../public/javascript/bootstrap-tags.min.js"></script>
+<script src="../../public/javascript/jquery.maskedinput.min.js"></script>
+<script src="../../public/javascript/moment.min.js"></script>
+<script src="../../public/javascript/jquery.bootstrap.wizard.min.js"></script>
+
+<!-- AngularJS Scripts -->
+<script src="../../public/javascript/myApp.js"></script>
+<script src="../../controllers/studenthomeController.js"></script>
+
+<!--data table scripts -->
+<link href="../../public/css/dataTables.bootstrap.css" rel="stylesheet" media="screen">
+<script src="../../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../public/javascript/jquery.dataTables.min.js"></script>
+<script src="../../public/javascript/dataTables.bootstrap.js"></script>
+<script src="../../public/javascript/tables.js"></script>
+
+<!-- file upload scripts-->
+<script src="../../public/javascript/ng-file-upload-shim.min.js"></script> 
+<script src="../../public/javascript/ng-file-upload.min.js"></script>
+
+
+<!-- common scripts -->
+<script src="../../public/javascript/custom.js"></script>
+
+
+
+
+
+
+</body>
+
+
+
+
+</html>

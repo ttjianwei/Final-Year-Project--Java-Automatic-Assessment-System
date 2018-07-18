@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title> Web Assessment Portal </title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<link href="public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../public/css/style.css">
+<script src="public/javascript/jquery-3.2.1.min.js"></script>
+
+  </head>
+  <body class="ng-view">
+  <div ng-app="myApp" ng-controller="loginController">
+    <div class="container">
+  <br>
+  <br>
+  <br>
+  <br>
+    <h1 class="welcome text-center" style="text-align:center;">Welcome</h1>
+
+        <div class="card card-container">
+    
+        <hr>
+
+            <form class="form-signin" ng-submit="sub()">
+
+                <div ng-model="errorMsg" style="color:red;"><h4>{{errorMsg}}</h4></div>
+
+                <p class="input_title">Username:</p>
+                <input type="text" id="inputEmail" class="login_box" ng-model="username" required autofocus>
+                <p class="input_title">Password</p>
+                <input type="password" id="inputPassword" class="login_box" ng-model="password" required>
+             <br>
+             <br>
+                <button class="btn btn-lg btn-primary" type="submit" >Login</button>
+            </form><!-- /form -->
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+  
+  </div>
+    <script src="public/javascript/myApp.js"></script>
+    <script src="controllers/loginController.js"></script>
+    <script src="public/javascript/ng-file-upload-shim.min.js"></script> 
+    <script src="public/javascript/ng-file-upload.min.js"></script>
+  </body>
+  </html>

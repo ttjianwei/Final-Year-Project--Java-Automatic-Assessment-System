@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Web Assessment Portal</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<script src="../../public/javascript/jquery-3.2.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../../public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../public/css/styleBS.css" rel="stylesheet">
+<link href="../../public/css/bootstrap-formhelpers.min.css" rel="stylesheet">
+<link href="../../public/css/bootstrap-select.min.css" rel="stylesheet">
+<link href="../../public/css/bootstrap-tags.css" rel="stylesheet">
+<link href="../../public/css/forms.css" rel="stylesheet">
+
+
+
+</head>
+
+<body ng-app="myApp" ng-controller="studenthomeController">
+
+
+
+<head-component></head-component>
+
+
+ <div class="page-content">
+
+ <div class="row">
+
+  <div class="col-md-2"><!--grid 2 for bootstrap -->
+        <div class="sidebar content-box" style="display: block;">
+           <ul class="nav">
+                    <!-- Main menu -->
+           <li><a href="" ng-click="studentHome()"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
+           <br>
+           <li class="current"><a href="" ng-click="attemptAssessmentQuestion()"><i class="glyphicon glyphicon-pencil"></i> Attempt Assessment Questions</a></li>
+           <br>
+           <li class=""><a href="" ng-click="attemptLabs()"><i class="glyphicon glyphicon-book"></i> Labs</a></li>
+           <br>
+           <li><a href="" ng-click="viewAttempts()"><i ng-click="viewAttempts()" class="glyphicon glyphicon-time"></i> View Past Attempts</a></li>
+    
+              <br>
+                
+                </ul>
+             </div>
+      </div>
+
+
+    <div class="col-md-6"><!--Main content -->
+      <div class="row">
+      <!-- to display content here -->
+
+
+  <div class="container" style="width: 400px;">
+      
+
+  
+    	    <form name="sessionForm" id="sessionForm" ng-submit="submitSession()">
+    	   	 <br>
+             <br>
+             <br>
+             <br>
+             <br>
+             <br>
+             <br>
+             <br>
+             	<h2>Log on to Assessment Session</h2>
+             	<br>
+             	    <div ng-model="sessionErr" style="color:red;"><h4>{{sessionErr}}</h4></div>
+             	   <br>
+	    	    <p>Session ID:</p>
+                <input type="text" id="sessionID" class="form-control" ng-model="sessionID" required autofocus><br>
+                <p>Session Password:</p>
+                <input type="password" id="sessionPassword" class="form-control" ng-model="sessionPassword" required>
+
+             <br>
+             <br>
+               	<button class="btn btn-lg btn-primary" type="submit">Enter</button>
+
+    	    </form>
+
+
+
+
+       </div>
+
+      </div>
+    </div>
+    
+      </div>
+      </div>
+
+
+<!-- Forms Scripts 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<script src="../../public/javascript/bootstrap-formhelpers.min.js"></script>
+<script src="../../public/javascript/bootstrap-select.min.js"></script>
+<script src="../../public/javascript/bootstrap-tags.min.js"></script>
+<script src="../../public/javascript/jquery.maskedinput.min.js"></script>
+<script src="../../public/javascript/moment.min.js"></script>
+<script src="../../public/javascript/jquery.bootstrap.wizard.min.js"></script>
+
+<!-- AngularJS Scripts -->
+<script src="../../public/javascript/myApp.js"></script>
+<script src="../../controllers/studenthomeController.js"></script>
+
+<!--data table scripts -->
+<link href="../../public/css/dataTables.bootstrap.css" rel="stylesheet" media="screen">
+<script src="../../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../public/javascript/jquery.dataTables.min.js"></script>
+<script src="../../public/javascript/dataTables.bootstrap.js"></script>
+<script src="../../public/javascript/tables.js"></script>
+
+<!-- file upload scripts-->
+<script src="../../public/javascript/ng-file-upload-shim.min.js"></script> 
+<script src="../../public/javascript/ng-file-upload.min.js"></script>
+
+
+<!-- common scripts -->
+<script src="../../public/javascript/custom.js"></script>
+
+</body>
+
+
+
+
+</html>
