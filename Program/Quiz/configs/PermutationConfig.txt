@@ -1,0 +1,6 @@
+Title:All Permutation of Strings,
+Inputs:Water#Pineapple#Mango,
+Outputs:none#e|p#none,
+Keywords:,
+Score:,
+Main:a

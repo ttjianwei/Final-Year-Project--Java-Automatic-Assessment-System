@@ -1,0 +1,6 @@
+Title:Count duplicate characters,
+Inputs:photo#calculator,
+Outputs:o:2#c:2 - a:2 - l:2,
+Keywords:charAt,
+Score:20,
+Main:

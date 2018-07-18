@@ -1,0 +1,5 @@
+Title:Remove Character(s) from String,
+Inputs:objects#s#elephant#e,
+Outputs:object#lphant,
+Keywords:,
+Score:

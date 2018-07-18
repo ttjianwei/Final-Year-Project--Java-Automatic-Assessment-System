@@ -1,0 +1,6 @@
+Title:Count Duplicate Character,
+Inputs:photo#calculator#van,
+Outputs:o:2#c:2 - l:2#none,
+Keywords:,
+Score:,
+Main:

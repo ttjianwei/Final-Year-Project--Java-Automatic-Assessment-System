@@ -1,0 +1,5 @@
+Title:String Anagram,
+Inputs:mary#army#apple#orange#car#van,
+Outputs:true#false#false,
+Keywords:,
+Score:,Main:

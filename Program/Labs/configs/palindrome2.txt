@@ -1,0 +1,6 @@
+Title:palindrome2,
+Inputs:level#door#computer,
+Outputs:true#false#false,
+Keywords:computer,
+Score:22,
+Main:,

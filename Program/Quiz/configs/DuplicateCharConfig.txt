@@ -1,0 +1,6 @@
+Title:Printing Out Duplicate Characters,
+Inputs:Water#Pineapple#Mango,
+Outputs:none#e|p#none,
+Keywords:,
+Score:,
+Main:

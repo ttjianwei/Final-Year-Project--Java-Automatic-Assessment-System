@@ -1,0 +1,6 @@
+Title:Palindrome,
+Inputs:tank#anna#level,
+Outputs:false#true#true,
+Keywords:,
+Score:,
+Main:

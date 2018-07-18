@@ -1,0 +1,6 @@
+Title:planeApp,
+Inputs:1#2#3#4#5#2#2#2#1#3#6#2#1,
+Outputs:There are 12 empty seats#List of empty seats:SeatId: 1SeatId: 2SeatId: 3SeatId: 4SeatId: 5SeatId: 6SeatId: 7SeatId: 8SeatId: 9SeatId: 10SeatId: 11SeatId: 12#The seat assignments are as follow:#The seat assignments are as follow:#Please enter SeatID:#Please enter CustomerID:#Seat Assigned!#List of empty seats:SeatId: 1SeatId: 3SeatId: 4SeatId: 5SeatId: 6SeatId: 7SeatId: 8SeatId: 9SeatId: 10SeatId: 11SeatId: 12#There are 11 empty seats#The seat assignments are as follow:SeatID 2 assigned to CustomerID 2#Please enter SeatID:#Seat unassigned!#There are 12 empty seats,
+Keywords:public void unAssignSeat(int seatId)#public void showAssignedSeats(boolean bySeatId)#private PlaneSeat[] sortSeats(),
+Score:25#21#24,
+Main:PlaneApp

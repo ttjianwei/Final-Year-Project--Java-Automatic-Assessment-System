@@ -1,0 +1,5 @@
+Title:Palindrome,
+Inputs:level#anna,
+Outputs:true#true,
+Keywords:,
+Score:,

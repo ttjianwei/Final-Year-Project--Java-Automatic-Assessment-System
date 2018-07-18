@@ -1,0 +1,5 @@
+Title:Check Strings for Digits,
+Inputs:block123#block,
+Outputs:true#false,
+Keywords:,
+Score:

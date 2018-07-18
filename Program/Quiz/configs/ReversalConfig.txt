@@ -1,0 +1,6 @@
+Title:String Reversal,
+Inputs:tank#table,
+Outputs:knat#elbat,
+Keywords:,
+Score:,
+Main:
